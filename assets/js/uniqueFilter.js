@@ -1,7 +1,6 @@
 app.filter('unique', function() {
 
     return function(arr, targetField) {
-        debugger;
         var values = [],
             i,
             unique,
