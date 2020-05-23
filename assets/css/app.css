@@ -34,7 +34,7 @@ body p {
 }
 
 .img-size {
-  max-width: 6em;
+  max-width: 5em;
   width: 100%;
 }
 
@@ -782,5 +782,9 @@ button.disabled::after {
 
 .positionRelative {
   position: relative;
+}
+
+.productCardWrapper {
+  padding: 14px 6px !important;
 }
 /*# sourceMappingURL=app.css.map */
