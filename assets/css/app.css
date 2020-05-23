@@ -140,8 +140,8 @@
 }
 
 .alart-pad:hover {
-  -webkit-box-shadow: 1px 1px 2px 1px grey;
-          box-shadow: 1px 1px 2px 1px grey;
+  -webkit-box-shadow: 0px 0px 6px 0px grey;
+          box-shadow: 0px 0px 6px 0px grey;
   border-radius: 4px;
   background-color: #ffffff;
 }
