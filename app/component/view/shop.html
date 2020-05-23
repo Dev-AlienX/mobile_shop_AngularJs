@@ -82,18 +82,18 @@
                 </div>
                 <hr style="margin: 3px; border: 0; border-top: 1px solid #b7b7b7">
                 <div class="container-fluid" ng-class="shopDarkLight" ng-if="screenSize >= 770">
-                    <div class="row margin0">
+                    <div class="row ">
                         <div class="col-12 padding05" ng-class="mobileDarklight;" style="display: block"
                             ng-repeat="mobile in mobileDetails | filter:searchText | orderBy:sortType"
                             data-id="{{mobile.id}}"
                             data-category="{{mobile.brand}} {{mobile.camera}} {{mobile.ram}}gb {{mobile.rom}} {{mobile.price}}">
-                            <div class="row">
+                            <div class="row margin0">
                                 <div class="" ng-class="prodClassImg">
                                     <a ng-href="#!detail" ng-click="moreDetail(mobile)">
                                         <img class="img-fluid img-size" src="{{mobile.imgPath}}">
                                     </a>
                                 </div>
-                                <div class="col-8 col-xl-8 col-lg-8 col-md-8" ng-class="prodClassDetail"
+                                <div class="col-8 col-xl-9 col-lg-8 col-md-8" ng-class="prodClassDetail"
                                     ng-init="loadNum()">
                                     <div class="row">
                                         <div class="col">

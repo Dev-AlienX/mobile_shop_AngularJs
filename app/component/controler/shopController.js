@@ -110,7 +110,7 @@ app.controller('shopController', ['$scope', '$rootScope', '$http', '$log', '$fil
                 $scope.prodClassImg = "col-1 col-xl-2 col-lg-2 col-md-2 "
             }
             else if ($scope.screenSize >= 1278) {
-                $scope.prodClassImg = "col-2 col-xl-2 col-lg-2 col-md-2 productCardWrapper"
+                $scope.prodClassImg = "col-2 col-xl-1 col-lg-2 col-md-2 productCardWrapper"
             }
             else {
                 $scope.prodClassImg = "col-2 col-xl-2 col-lg-2 col-md-2"
