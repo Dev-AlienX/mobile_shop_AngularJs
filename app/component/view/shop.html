@@ -1,0 +1,186 @@
+<div class="check-btn">
+    <a class="btn btn-primary btn-block float-right" ng-href="#!cart">
+        <i class="fas fa-shopping-cart"></i> {{totalInCart}}
+    </a>
+</div>
+
+<section id="shop" ng-init="resizeIt()">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 col-xl-2 col-sm-12" ng-if="screenSize >= 1159">
+                <div class="card" ng-class="filterDarkLight">
+                    <div class="card-header text-uppercase">
+                        <strong>
+                            <h3>filter</h3>
+                        </strong>
+                    </div>
+                    <div class="card-body text-capitalize">
+                        <p class="card-title"><button class="btn btn-outline-primary btn-sm btn-block text-uppercase"
+                                type="button" disabled><strong>Brand</strong></button></p>
+                        <div ng-repeat="brand in filterMobile | unique:'brand'">
+                            <label class="checkContainer text-uppercase">{{brand.brand}}<input class="text-uppercase"
+                                    type="checkbox" ng-model="brand.brandSelected"
+                                    ng-click="lastFilter(brand.brand , brand.brandSelected,'brand')">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <hr>
+                        <p class="card-title"><button class="btn btn-outline-primary btn-sm btn-block text-uppercase"
+                                type="button" disabled><strong>camera</strong></button></p>
+                        <div ng-repeat="cameras in filterMobile | unique:'camera'">
+                            <label class="checkContainer">{{cameras.camera + "MP"}}
+                                <input class="text-uppercase" type="checkbox" ng-model="cameras.cameraSelected"
+                                    ng-click="lastFilter(cameras.camera , cameras.cameraSelected,'camera')">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <hr>
+                        <p class="card-title"><button class="btn btn-outline-primary btn-sm btn-block text-uppercase"
+                                type="button" disabled><strong>ram</strong></button></p>
+                        <div ng-repeat="rams in filterMobile | unique:'ram'">
+                            <label class="checkContainer">{{rams.ram + "GB"}}
+                                <input class="text-uppercase" type="checkbox" ng-model="rams.ramSelected"
+                                    ng-click="lastFilter(rams.ram , rams.ramSelected,'ram')">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="" ng-class="mainShopDiv">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-9" style="background-color: unset !important; font-size: 90%;"
+                            ng-class="shopDarkLight">
+                            results for : <span style="font-weight: 700">Smartphone</span>
+                            <span ng-if="brandCount >= 2 ">: <span style="font-weight: 700">Brand Selected :
+                                    {{brandCount}}</span> </span>
+                            <span ng-if="brandCount === 1" ng-repeat="filterToShow in brandFilter | unique:'brand'">:
+                                <span style="font-weight: 700">{{filterToShow.brand}}</span>
+                            </span>
+                            <span ng-if="cameraCount >= 2 ">: <span style="font-weight: 700">Camera Selected :
+                                    {{cameraCount}}</span> </span>
+                            <span ng-if="cameraCount === 1"
+                                ng-repeat="filterToShowcamera in cameraFilter | unique:'camera'">: <span
+                                    style="font-weight: 700">{{filterToShowcamera.camera}}MP</span>
+                            </span>
+                            <span ng-if="ramCount >= 2">: <span style="font-weight: 700">Ram Selected :
+                                    {{ramCount}}</span> </span>
+                            <span ng-if="ramCount === 1" ng-repeat="filterToShowram in ramFilter | unique:'ram'">: <span
+                                    style="font-weight: 700">{{filterToShowram.ram}}GB</span>
+                            </span>
+                        </div>
+                        <div class="col-3 ">
+                            <select class="btn btn-sm bg-light-gray float-right text-uppercase" style="border:1px solid #b7b7b7"
+                                ng-model="sortType">
+                                <option class="text-uppercase" value="">Sort By : new to old</option>
+                                <option class="text-uppercase" ng-repeat="item in sortBy" value="{{item}}">Sort By :
+                                    {{item}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <hr style="margin: 3px; border: 0; border-top: 1px solid #b7b7b7">
+                <div class="container-fluid" ng-class="shopDarkLight" ng-if="screenSize >= 770">
+                    <div class="row">
+                        <div class="col-12 padding05" ng-class="mobileDarklight;" style="display: block"
+                            ng-repeat="mobile in mobileDetails | filter:searchText | orderBy:sortType"
+                            data-id="{{mobile.id}}"
+                            data-category="{{mobile.brand}} {{mobile.camera}} {{mobile.ram}}gb {{mobile.rom}} {{mobile.price}}">
+                            <div class="row">
+                                <div class="" ng-class="prodClassImg">
+                                    <a ng-href="#!detail" ng-click="moreDetail(mobile)">
+                                        <img class="img-fluid img-size" src="{{mobile.imgPath}}">
+                                    </a>
+                                </div>
+                                <div class="col-8 col-xl-8 col-lg-8 col-md-8" ng-class="prodClassDetail"
+                                    ng-init="loadNum()">
+                                    <div class="row">
+                                        <div class="col">
+                                            <a class="brand-text" ng-href="#!detail" ng-click="moreDetail(mobile)">
+                                                <h3 class="text-uppercase">{{mobile.brand}} {{mobile.modal}}</h3>
+                                            </a></div>
+                                        <div class="col">
+                                            <h4 class="text-dark float-right" ng-if="screenSize <= 770">
+                                                ₹{{mobile.price}}</h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <div class="row">
+                                                <div class="col-12 text-capitalize">
+                                                    <P>Ratings
+                                                        <span class="rate" tooltip="Based On User Feedback"
+                                                            ng-class="{'bg-success': mobile.rateing > '3','bg-warning': mobile.rateing <= '3','bg-danger': mobile.rateing < '2'}">{{mobile.rateing}}
+                                                            <span class="fa fa-star star"></span>
+                                                        </span>
+                                                    </P>
+                                                </div>
+                                                <div class="col-12 text-capitalize">
+                                                    <p>{{mobile.camera}}MP camera</p>
+                                                </div>
+                                                <div class="col-12 text-capitalize">
+                                                    <P>{{mobile.ram}}gb ram</P>
+                                                </div>
+                                                <div class="col-12 text-capitalize">
+                                                    <P>{{mobile.rom}} rom</P>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="col-12 text-capitalize">
+                                                <p>{{mobile.processar}} processor</p>
+                                            </div>
+                                            <div class="col-12 text-capitalize">
+                                                <P>display : {{mobile.display}}</P>
+                                            </div>
+                                            <div class="col-12 text-capitalize">
+                                                <label class="checkContainer">compare
+                                                    <input type="checkbox" name="compare" value="{{mobile}}"
+                                                        ng-checked="selection.indexOf(mobile) > -1"
+                                                        ng-click="toggleSelection(mobile)">
+                                                    <!-- <input type="checkbox" ng-click="compareMobile(mobile);" name="fl-ram"
+                                                            value="8gb" id="8gb"> -->
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-2 col-xl-2 col-lg-2 col-md-2" ng-class="prodClassBtn"
+                                    ng-if="screenSize >= 770">
+                                    <div class="row">
+                                        <div class="col-12" style="padding-top: 10%;">
+                                            <h3 class="text-center">₹ {{mobile.price}} </h3><br>
+                                        </div>
+                                        <div class="col-12">
+                                            <button class="btn btn-block btn-sm" style=" padding-left: 1.1em;
+                                            padding-right: 1.1em;" ng-class="addedDayNight" type="button"
+                                                ng-click="warning()" value="warning">
+                                                <i class="fas fa-credit-card"></i> buy now</button>
+                                        </div>
+                                        <div class="col-12" style="padding-top:1rem">
+                                            <button class="btn btn-block btn-sm cart-btn"
+                                                ng-class="addToCart;{'disabled': mobile.disabled}" type="button"
+                                                ng-click="addmobile(mobile); added($index); success()" value="success">
+                                                <i class="fas fa-cart-plus"></i>Add to Cart
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div ng-if="screenSize <= 770">sdbfsdaf</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="compare-btn" ng-if="totalInComp > 1">
+    <a class="btn btn-primary btn-block float-right text-uppercase" ng-href="#!compare">
+        <span class="compate-text">{{totalInComp}}</span> compare
+    </a>
+</div>
+<notify-me></notify-me>

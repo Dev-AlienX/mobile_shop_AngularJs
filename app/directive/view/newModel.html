@@ -1,0 +1,13 @@
+<div ng-shw="notify.queue.length > 0">
+    <div class="alerts" >
+        <div class="ng-overlay"></div>
+        <div class="alert alert-{{(m.type)}} alert-dismissable in pull-right" ng-repeat="m in notify.queue">
+            <button type="button" class="close" ng-click="closeAlert(m.body)" data-dismiss="alert">×</button>
+            <div>
+                    <i class="fas fa-{{m.icon}}"></i>
+            <label>{{m.title}}</label>
+            <div>{{m.body}}</div>
+        </div>
+        </div>
+    </div>
+</div>

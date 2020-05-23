@@ -1,0 +1,151 @@
+<section id="detail">
+    <div class="container-fluid">
+        <div class="jumbotron">
+            <div class="row" ng-repeat="details in detailShow">
+                <div class="col-4">
+                    <div class="row">
+                        <div class="col detail-col">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="lil-img">
+                                                <img class="img-thumbnail" src="{{details.imgPath}}" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="lil-img">
+                                                <img class="img-thumbnail" src="{{details.imgPath}}" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="lil-img">
+                                                <img class="img-thumbnail" src="{{details.imgPath}}" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="lil-img">
+                                                <img class="img-thumbnail" src="{{details.imgPath}}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-8 left-margin">
+                                    <a data-toggle="modal" data-target="#exampleModalCenter">
+                                        <img class="detail-img img-fluid" src="{{details.imgPath}}"></a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    
+                    <div class="row alart-space">
+                        <div class="col detail-col text-center">
+                            <a href="" class="btn btn-success  disabled" disabled>Buy Now</a>
+                            <a href="" class="btn btn-warning  disabled" disabled>Add to Cart</a>
+                        </div>
+                    </div>
+                    <div class="row alart-space">
+                        <div class="col detail-col text-center">
+                            <a href="" class="btn btn-success " ng-href="#!shop">back to shoping</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="detail-col">
+                        <div class="row">
+                            <div class="col-9">
+                                <h5 class="text-uppercase">{{details.brand}} {{details.modal}} ({{details.ram}}GB RAM)
+                                    ({{details.rom}})</h5 class="text-uppercase">
+                            </div>
+                            <div class="col-3">
+                                <h5 class="text-uppercase text-center">{{details.price}}<span class="text-solid">₹</span>
+                                </h5 class="text-uppercase">
+                            </div>
+                            <div class="col-12">
+                                <hr>
+                                <div class="row">
+                                    <div class="col-3">
+                                        <p class="text-uppercase">Display Features</p>
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="row">
+                                            <div class="col-4">Display Size</div>
+                                            <div class="col-7">{{details.displaySize}}</div>
+                                            <div class="col-4 prodict-padding">Resolution</div>
+                                            <div class="col-7 prodict-padding">{{details.resolution}}</div>
+                                            <div class="col-4 prodict-padding">Resolution Type</div>
+                                            <div class="col-7 prodict-padding">{{details.resolutionType}}</div>
+                                            <div class="col-4 prodict-padding">Other Display Features</div>
+                                            <div class="col-7 prodict-padding">{{details.otherDisplayFeatures}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row alart-space">
+                                    <div class="col-3">
+                                        <p class="text-uppercase">Camera</p>
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="row">
+                                            <div class="col-4">Primary Camera</div>
+                                            <div class="col-7">{{details.primaryCamera}}</div>
+                                            <div class="col-4 prodict-padding">Primary Camera Features</div>
+                                            <div class="col-7 prodict-padding text-justify">{{details.primaryCameraFeatures}}</div>
+                                            <div class="col-4 prodict-padding">Flash</div>
+                                            <div class="col-7 prodict-padding">{{details.Flash}}</div>
+                                            <div class="col-4 prodict-padding">HD Recording</div>
+                                            <div class="col-7 prodict-padding">{{details.HDRecording}}</div>
+                                            <div class="col-4 prodict-padding">Video Recording Resolution</div>
+                                            <div class="col-7 prodict-padding">{{details.videoRecordingResolution}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row alart-space">
+                                    <div class="col-3">
+                                        <p class="text-uppercase">RAM</p>
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="row">
+                                            <div class="col-4">RAM Size</div>
+                                            <div class="col-7">{{details.ram}}GB</div>
+                                            <div class="col-4 prodict-padding">RAM Type</div>
+                                            <div class="col-7 prodict-padding">DDR4</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row alart-space">
+                                    <div class="col-3">
+                                        <p class="text-uppercase">ROM</p>
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="row">
+                                            <div class="col-4">ROM Size</div>
+                                            <div class="col-7">{{details.rom}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+
+                            <img src="{{details.imgPath}}" class="img-fluid" alt="">
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

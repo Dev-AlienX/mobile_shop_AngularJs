@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="shoping">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!---------------------------- bootstrap -------------------------------------------->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!---------------------------- custom css ------------------------------------------->
+    <link rel="stylesheet" href="assets/css/app.css">
+    <title>Document</title>
+</head>
+
+<body ng-class="bodyDarkLight" data-ng-init="initNew()" ng-controller="bodyController">
+    <!----------------------------------------- body starts -------------------------------------------------->
+    <div ng-controller="mainCtrl as main">
+        <!-- main navigation bar -->
+        <div nav-bar data-ng-init="init()"></div>
+        <!-- anguler view port -->
+        <div ng-view ng-class="bgDarkLight"></div>
+        <!-- mini digital clock -->
+        <div class="clock"></div>
+    </div>
+    <!----------------------------------------- body ends ---------------------------------------------------->
+
+    <!-------------------------------------------scripts------------------------------------------------------>
+    <!--------------------------- Libs --------------------------->
+    <!-- jquary -->
+    <script src="assets/libs/jQuery v3.3.1.js"></script>
+    <!-- anguler -->
+    <script src="assets/libs/Angular.min.js"></script>
+    <!-- anguler route -->
+    <script src="assets/libs/angular-route.min.js"></script>
+    <!-- anguler filter -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.6/angular-filter.js"></script>
+    <!-- bootstrap js -->
+    <script src="assets/libs/bootstrap.min.js"></script>
+    <!-- icon pack -->
+    <script src="assets/libs/fontawesome.js"></script>
+    <!-- dynamic clock -->
+    <script src="assets/js/apnaTime.js"></script>
+    <!-- dynamic clock -->
+    <script type="text/javascript" src="assets/libs/fullpage.js"></script>
+
+    <!----------------- anguler controlls ------------------------->
+    <!-- main app js -->
+    <script src="assets/js/app.js"></script>
+    <!-- primary controller -->
+    <script src="assets/js/mainCtrl.js"></script>
+    <!-- routing js -->
+    <script src="assets/js/routing.js"></script>
+    <!-- directive -->
+    <script src="assets/js/directiveControler.js"></script>
+    <!-- filter -->
+    <script src="assets/js/uniqueFilter.js"></script>
+    <!-- javascript -->
+    <script src="assets/js/main.js"></script>
+    <!-- javascript sorting -->
+    <script src="assets/js/serviceSort.js"></script>
+
+    <!----------------------data controller -------------------------->
+    <!-- main json -->
+    <script src="app/modal/jsonService.js"></script>
+    <!-- detail page service -->
+    <script src="app/modal/detailService.js"></script>
+    <!-- cart service -->
+    <script src="app/modal/cartService.js"></script>
+    <!-- cart service -->
+    <script src="app/modal/compaireService.js"></script>
+    <!-- model service -->
+    <script src="app/modal/modelService.js"></script>
+    <!----------------- directive controller ----------------------->
+    <!-- model service dir -->
+    <script src="app/directive/controler/serviceModel.js"></script>
+    <!-- tooltip directive -->
+    <script src="app/directive/controler/toolTip.js"></script>
+
+    <!-------------------------- view controllers --------------------->
+    <!-- navbar -->
+    <script src="app/directive/controler/navbarController.js"></script>
+    <!-- home -->
+    <script src="app/component/controler/homeController.js"></script>
+    <!-- shop -->
+    <script src="app/component/controler/shopController.js"></script>
+    <!-- detail -->
+    <script src="app/component/controler/detailController.js"></script>
+    <!-- cart -->
+    <script src="app/component/controler/cartController.js"></script>
+    <!-- compare -->
+    <script src="app/component/controler/compareController.js"></script>
+    <!-------------------------------------------scripts------------------------------------------------------>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<section id="cart">
+    <div class="container">
+        <div class="jumbotron jumbotron-margin">
+            <div class="row alart-space-cart bg-light" ng-repeat="carts in cartShow | unique:'id'">
+                <div class="col-1">
+                    <img class="img-fluid img-cart-modal" src="{{carts.imgPath}}">
+                </div>
+                <div class="col-9">
+                    <div class="row">
+                        <h4 class="text-uppercase">{{carts.brand}} {{carts.modal}} ({{carts.ram}}GB , {{carts.rom}})</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-10">
+                            <div class="row">
+                                <div class="col">
+                                    <p>{{carts.camera}}MP camera, snapdragon {{carts.processar}} processor</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <h4 class="text-uppercase">{{carts.qty * carts.price}}<span class="text-solid">₹</span></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="row">
+                        <div class="col-12">
+                            <h6 class="text-center">Quantity</h6>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text" id="btnGroupAddon" ng-click="carts.qty = carts.qty + 1"><i
+                                            class="fas fa-plus-square"></i></div>
+                                </div>
+                                <input type="text" class="form-control text-center" ng-model="carts.qty" aria-label="Input group example"
+                                    aria-describedby="btnGroupAddon">
+                                <div class="input-group-append">
+                                    <div class="input-group-text" id="btnGroupAddon" ng-click="carts.qty = carts.qty - 1"><i
+                                            class="fas fa-minus-square"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 alart-space">
+                            <button class="btn btn-warning btn-block" type="button" ng-click="RemoveCart(carts)">
+                                <i class="fas fa-trash-alt"></i>
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row alart-space-cart bg-light">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-2">
+                            <h4 class="text-uppercase float-right text-center Deliver-to">Deliver to</h4>
+                        </div>
+                        <div class="col-2">
+                            <input class="form-control" type="text" name="pincode" ng-model="givePin" /></div>
+                        <div class="col-2">
+                            <button type="button" class="btn btn-info" ng-click="pinCheck()">{{checkPin}}</button>
+                        </div>
+                        <div class="col-6">
+                            <h4 class="float-right">Total : ₹{{ totalPriceOfCart() }}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg fixed-bottom navbar-light bg-light">
+            <ul class="navbar-nav ml-auto text-uppercase">
+                <li class="nav-item nav-padding"><a class="btn btn-info text-uppercase" ng-href="#!shop"><i class="fas fa-chevron-left"></i>
+                        Back to Shoping</a></li>
+                <li class="nav-item nav-padding"><button class="btn btn-success text-uppercase" disabled><i class="far fa-credit-card"></i>
+                        Buy now</button></li>
+                <li class="nav-item"><button class="btn btn-danger text-uppercaser" ng-click="clearCart()"><i class="fas fa-trash"></i>
+                        Clear cart</button></li>
+            </ul>
+        </nav>
+    </div>
+
+    </nav>
+    </div>
+</section>

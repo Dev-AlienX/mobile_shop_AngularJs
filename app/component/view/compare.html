@@ -1,0 +1,294 @@
+<!-- <ul ng-repeat="compaireIt in compareShow" style="top:50vh; position:absolute;">
+    <li>
+            <div>
+                    {{compaireIt.brand}}
+            </div>
+    </li>
+</ul> -->
+
+<section id="detail">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2">
+                <h5>Compare</h5>
+                <p ng-repeat="compaireIt in compareShow">{{compaireIt.brand}} {{compaireIt.modal}}</p>
+            </div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-3 borderLeft paddingLeft5" ng-repeat="compaireIt in compareShow">
+                        <div class="compare-img">
+                            <img class="img-fluid img-size" style="margin-left: 37%;" src="{{compaireIt.imgPath}}">
+                        </div>
+                        <h4 class="text-uppercase text-center">{{compaireIt.brand}} {{compaireIt.modal}}</h4>
+                        <h4 class="text-uppercase text-center">₹ {{compaireIt.price}}</h4>
+                        <div class="row">
+                            <div class="col">
+                                <button type="button" class="btn btn-warning btn-sm btn-block">Add to Cart</button>
+                            </div>
+                            <div class="col">
+                                <button type="button" class="btn btn-success btn-sm btn-block">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 borderLeft" ng-if="compareShow.length === 3">
+                        <h1></h1>
+                    </div>
+                    <div class="col-3 borderLeft" ng-if="compareShow.length === 2">
+                        <h1></h1>
+                    </div>
+                    <div class="col-3 borderLeft" ng-if="compareShow.length === 2">
+                        <h1></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2 ">
+                <hr class="compare-hr">
+                <h5>Display</h5>
+            </div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-3 borderLeft positionRelative" ng-repeat="compaireItDisplay in compareShow">
+                        <hr class="compare-hr">
+                        <p class="text-justify">{{compaireItDisplay.displaySize}} Inche</p>
+                        <p class="text-justify">{{compaireItDisplay.resolution}} Pixels</p>
+                        <p class="text-justify">{{compaireItDisplay.display}} </p>
+                        <p class="text-justify">{{compaireItDisplay.otherDisplayFeatures}}
+                        </p>
+
+                    </div>
+                    <div class="col-3 borderLeft" ng-if="compareShow.length === 3">
+                        <h1></h1>
+                    </div>
+                    <div class="col-3 borderLeft" ng-if="compareShow.length === 2">
+                        <h1></h1>
+                    </div>
+                    <div class="col-3 borderLeft" ng-if="compareShow.length === 2">
+                        <h1></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <hr class="compare-hr">
+                <h5>Camera</h5>
+
+            </div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-3 borderLeft" ng-repeat="compaireItCamera in compareShow">
+                        <hr class="compare-hr">
+                        <p class="text-justify">{{compaireItCamera.primaryCamera}}</p>
+                        <p class="text-justify">{{compaireItCamera.secondaryCamera}}</p>
+                        <p class="text-justify">
+                            {{compaireItCamera.primaryCameraFeatures}}
+                        </p>
+                        <p class="text-justify">{{compaireItCamera.Flash}}</p>
+                        <p class="text-justify">{{compaireItCamera.HDRecording}}</p>
+                        <p class="text-justify">
+                            {{compaireItCamera.videoRecordingResolution}}</p>
+                    </div>
+                    <div class="col-3 borderLeft" ng-if="compareShow.length === 3">
+                        <h1></h1>
+                    </div>
+                    <div class="col-3 borderLeft" ng-if="compareShow.length === 2">
+                        <h1></h1>
+                    </div>
+                    <div class="col-3 borderLeft" ng-if="compareShow.length === 2">
+                        <h1></h1>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <hr class="compare-hr">
+                <h5>Storage</h5>
+            </div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-3 borderLeft" ng-repeat="compaireItStorage in compareShow">
+                        <hr class="compare-hr">
+                        <p class="text-justify">{{compaireItStorage.ram}}GB</p>
+                        <p class="text-justify">{{compaireItStorage.rom}}</p>
+                    </div>
+                    <div class="col-3 borderLeft" ng-if="compareShow.length === 3">
+                        <h1></h1>
+                    </div>
+                    <div class="col-3 borderLeft" ng-if="compareShow.length === 2">
+                        <h1></h1>
+                    </div>
+                    <div class="col-3 borderLeft" ng-if="compareShow.length === 2">
+                        <h1></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <hr class="compare-hr">
+                <h5>Processar</h5>
+            </div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-3 borderLeft" ng-repeat="compaireItProcessar in compareShow">
+                        <hr class="compare-hr">
+                        <p class="text-justify">{{compaireItProcessar.processar}}</p>
+                        <p class="text-justify">{{compaireItProcessar.processorCore}}</p>
+                        <p class="text-justify">{{compaireItProcessar.clockSpeed}}</p>
+                    </div>
+                    <div class="col-3 borderLeft" ng-if="compareShow.length === 3">
+                        <h1></h1>
+                    </div>
+                    <div class="col-3 borderLeft" ng-if="compareShow.length === 2">
+                        <h1></h1>
+                    </div>
+                    <div class="col-3 borderLeft" ng-if="compareShow.length === 2">
+                        <h1></h1>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <hr class="compare-hr">
+                <h5>Connectivity</h5>
+            </div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-3 borderLeft" ng-repeat="compaireItConnectivity in compareShow">
+                        <hr class="compare-hr">
+                        <p class="text-justify">{{compaireItConnectivity.networkType}}</p>
+                        <p class="text-justify">{{compaireItConnectivity.Bluetooth}}</p>
+                        <p class="text-justify">{{compaireItConnectivity.WiFi}}</p>
+                    </div>
+                    <div class="col-3 borderLeft" ng-if="compareShow.length === 3">
+                        <h1></h1>
+                    </div>
+                    <div class="col-3 borderLeft" ng-if="compareShow.length === 2">
+                        <h1></h1>
+                    </div>
+                    <div class="col-3 borderLeft" ng-if="compareShow.length === 2">
+                        <h1></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <hr class="compare-hr">
+                <h5>Battery & charging</h5>
+            </div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-3 borderLeft" ng-repeat="compaireItBattry in compareShow">
+                        <hr class="compare-hr">
+                        <p class="text-justify">{{compaireItBattry.USB}}</p>
+                        <p class="text-justify">{{compaireItBattry.Battery}}</p>
+                        <p class="text-justify">
+                            <span ng-if="compaireItBattry.USB === 'Type-C'">Yes</span>
+                            <span ng-if="compaireItBattry.USB === '!Type-C'">no</span>
+                        </p>
+                    </div>
+                    <div class="col-3 borderLeft" ng-if="compareShow.length === 3">
+                        <h1></h1>
+                    </div>
+                    <div class="col-3 borderLeft" ng-if="compareShow.length === 2">
+                        <h1></h1>
+                    </div>
+                    <div class="col-3 borderLeft" ng-if="compareShow.length === 2">
+                        <h1></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <hr class="compare-hr">
+                <h5>Other Features</h5>
+            </div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-3 borderLeft" ng-repeat="compaireItFeatures in compareShow">
+                        <hr class="compare-hr">
+                        <p class="text-justify">{{compaireItFeatures.Sensors}}</p>
+                        <p class="text-justify">{{compaireItBattry.Battty}} mAh</p>
+
+                    </div>
+                    <div class="col-3 borderLeft" ng-if="compareShow.length === 3">
+                        <h1></h1>
+                    </div>
+                    <div class="col-3 borderLeft" ng-if="compareShow.length === 2">
+                        <h1></h1>
+                    </div>
+                    <div class="col-3 borderLeft" ng-if="compareShow.length === 2">
+                        <h1></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 
+<div class="col-12">
+    <h5 class="text-center">{{compaireIt.brand}} {{compaireIt.modal}}</h5>
+    <h5 class="text-center font-weight-bold">{{compaireIt.price}}</h5>
+</div>
+
+<div class="col-12">
+    <p class="text-justify">{{compaireIt.displaySize}}</p>
+    <p class="text-justify">{{compaireIt.resolution}}</p>
+    <p class="text-justify">{{compaireIt.display}}</p>
+    <p class="text-justify">{{compaireIt.otherDisplayFeatures}}
+    </p>
+</div>
+
+<div class="col-12">
+    <p class="text-justify">{{compaireIt.primaryCamera}}</p>
+    <p class="text-justify">{{compaireIt.secondaryCamera}}</p>
+    <p class="text-justify">
+        {{compaireIt.primaryCameraFeatures}}
+    </p>
+    <p class="text-justify">{{compaireIt.Flash}}</p>
+    <p class="text-justify">{{compaireIt.HDRecording}}</p>
+    <p class="text-justify">
+        {{compaireIt.videoRecordingResolution}}</p>
+</div>
+
+<div class="col-12">
+    <p class="text-justify">{{compaireIt.ram}}</p>
+    <p class="text-justify">{{compaireIt.rom}}</p>
+</div>
+
+<div class="col-12">
+    <p class="text-justify">{{compaireIt.processar}}</p>
+    <p class="text-justify">{{compaireIt.processorCore}}</p>
+    <p class="text-justify">{{compaireIt.clockSpeed}}</p>
+</div>
+
+<div class="col-12">
+    <p class="text-justify">{{compaireIt.processar}}</p>
+    <p class="text-justify">{{compaireIt.processorCore}}</p>
+    <p class="text-justify">{{compaireIt.clockSpeed}}</p>
+
+
+
+</div>
+
+<div class="col-12">
+    <p class="text-justify">{{compaireIt.networkType}}</p>
+    <p class="text-justify">{{compaireIt.Bluetooth}}</p>
+    <p class="text-justify">{{compaireIt.Wi-Fi}}</p>
+    <p class="text-justify">{{compaireIt.USB}}</p>
+    <p class="text-justify">{{compaireIt.Sensors}}</p>
+</div>
+
+<div class="col-12">
+    <p class="text-justify">{{compaireIt.Battery}}</p>
+
+</div> -->

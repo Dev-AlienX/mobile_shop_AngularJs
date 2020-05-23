@@ -1,0 +1,19 @@
+<div ng-shw="notify.queue.length > 0">
+    <div class="alerts">
+        <div class="ng-overlay"></div>
+        <div class="alerted alert-{{(m.type)}} alert-dismissable in pull-right" ng-repeat="m in notify.queue">
+            <div class="card text-white bg-{{(m.type)}} mb-3">
+                <div class="card-header">
+                    <h1 class="text-center"><i class="fas fa-{{m.icon}}"></i></h1>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{m.title}}</h5>
+                    <p class="card-text">{{m.body}}</p>
+                    <button type="button" class="close btn btn-outline-{{(m.type)}} text-uppercase"
+                        ng-click="closeAlert(m.body)" data-dismiss="alerted">OK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,164 @@
+{
+    "mobile": [
+        {
+            "barnd": "nokia",
+            "modal": "5.1 plus",
+            "camera": "12",
+            "processar": 420,
+            "ram": 3,
+            "rom": 32,
+            "price": 12000,
+            "imgPath": "https://images-na.ssl-images-amazon.com/images/I/810dpzoJEYL._SL1500_.jpg"
+        },
+        {
+            "barnd": "vivo",
+            "modal": "Y93",
+            "camera": "13",
+            "processar": 560,
+            "ram": 4,
+            "rom": 128,
+            "price": 10000,
+            "imgPath": "https://images-na.ssl-images-amazon.com/images/I/71L4QWlogSL._SL1500_.jpg"
+        },
+        {
+            "barnd": "nokia",
+            "modal": "6.1 plus",
+            "camera": "16",
+            "processar": 632,
+            "ram": 3,
+            "rom": 64,
+            "price": 16000,
+            "imgPath": "https://images-na.ssl-images-amazon.com/images/I/415WkpRhWPL.jpg"
+        },
+        {
+            "barnd": "nokia",
+            "modal": "7.1 plus",
+            "camera": "12",
+            "processar": 685,
+            "ram": 3,
+            "rom": 128,
+            "price": 20000,
+            "imgPath": "https://images-na.ssl-images-amazon.com/images/I/61cWoqY8uwL._SL1137_.jpg"
+        },
+        {
+            "barnd": "oppo",
+            "modal": "f9",
+            "camera": "12",
+            "processar": 580,
+            "ram": 6,
+            "rom": 64,
+            "price": 20000,
+            "imgPath": "https://images-na.ssl-images-amazon.com/images/I/71jKkayiYoL._SL1357_.jpg"
+        },
+        {
+            "barnd": "vivo",
+            "modal": "V15",
+            "camera": "48",
+            "processar": 845,
+            "ram": 6,
+            "rom": 128,
+            "price": 29000,
+            "imgPath": "https://images-na.ssl-images-amazon.com/images/I/61WFEAE5aKL._SL1200_.jpg"
+        },
+        {
+            "barnd": "Samsung",
+            "modal": "M20",
+            "camera": "13",
+            "processar": 620,
+            "ram": 4,
+            "rom": 64,
+            "price": 13000,
+            "imgPath": "https://images-na.ssl-images-amazon.com/images/I/71gLBOMtCTL._SL1500_.jpg"
+        },
+        {
+            "barnd": "oppo",
+            "modal": "r7",
+            "camera": "16",
+            "processar": 835,
+            "ram": 8,
+            "rom": 128,
+            "price": 28000,
+            "imgPath": "https://images-na.ssl-images-amazon.com/images/I/51ohSGol2RL._SL1100_.jpg"
+        },
+        {
+            "barnd": "Samsung",
+            "modal": "Note 9",
+            "camera": "12",
+            "processar": 855,
+            "ram": 8,
+            "rom": 512,
+            "price": 80000,
+            "imgPath": "https://images-na.ssl-images-amazon.com/images/I/71G1XO3jZ-L._SL1500_.jpg"
+        },
+        {
+            "barnd": "realme",
+            "modal": "u1",
+            "camera": "12",
+            "processar": 560,
+            "ram": 3,
+            "rom": "32gb",
+            "price": 11000,
+            "imgPath": "https://images-na.ssl-images-amazon.com/images/I/713kEBUCw-L._SL1500_.jpg"
+        },
+        {
+            "barnd": "Samsung",
+            "modal": "s10",
+            "camera": "32",
+            "processar": 865,
+            "ram": 10,
+            "rom": "2tb",
+            "price": 120000,
+            "imgPath": "https://static.bhphoto.com/images/multiple_images/images500x500/1550846824000_IMG_1144155.jpg"
+        },
+        {
+            "barnd": "Honor",
+            "modal": "8x",
+            "camera": "20",
+            "processar": 720,
+            "ram": 4,
+            "rom": "64gb",
+            "price": 15000,
+            "imgPath": "https://images-na.ssl-images-amazon.com/images/I/813W4jjRuiL._SL1500_.jpg"
+        },
+        {
+            "barnd": "Honor",
+            "modal": "play",
+            "camera": "16",
+            "processar": 710,
+            "ram": 4,
+            "rom": "64gb",
+            "price": 12000,
+            "imgPath": "https://images-na.ssl-images-amazon.com/images/I/618piLnYjSL._SL1005_.jpg"
+        },
+        {
+            "barnd": "iPhone",
+            "modal": "Xs",
+            "camera": "12",
+            "processar": 845,
+            "ram": 8,
+            "rom": 512,
+            "price": 130000,
+            "imgPath": "https://images-na.ssl-images-amazon.com/images/I/8147R6R6vnL._SL1500_.jpg"
+        },
+        {
+            "barnd": "iPhone ",
+            "modal": "x",
+            "camera": "12",
+            "processar": 760,
+            "ram": 3,
+            "rom": "64gb",
+            "price": 75000,
+            "imgPath": "https://images-na.ssl-images-amazon.com/images/I/61IM1qjdoEL._SL1500_.jpg"
+        },
+        {
+            "barnd": "Huawei ",
+            "modal": "Mate 20",
+            "camera": "40",
+            "processar": 845,
+            "ram": 6,
+            "rom": "128gb",
+            "price": 70000,
+            "imgPath": "https://images-na.ssl-images-amazon.com/images/I/91oyO4LoybL._SL1500_.jpg"
+        }
+    ]
+}
